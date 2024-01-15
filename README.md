@@ -8,4 +8,3 @@ Currently, two official plugins are available:
 =======
 # Plant-Disease-Classification
 This is my personal project that I have built using CNN and also built web app for the same.
->>>>>>> abbca3a1b3cded0f29e797190961844a7700da52
