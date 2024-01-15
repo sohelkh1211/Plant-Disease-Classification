@@ -1,11 +1,12 @@
 import Navbar from './Navbar';
 import Classifier from './Classifier';
 
-export const TitleName = () => {
-    
+const TitleName = ({ title }) => {
+    document.title = title;
 }
 
 export {
     Navbar,
-    Classifier
+    Classifier,
+    TitleName
 };
