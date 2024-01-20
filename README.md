@@ -1,6 +1,8 @@
 # Plant-Disease-Classification
 This is my personal project that I have built using CNN and also built web app for the same.
 
+`After Loading the page should look like this.`
+
 <img width="960" alt="image" src="https://github.com/sohelkh1211/Plant-Disease-Classification/assets/125993375/aa92397f-c6f8-4055-8e13-9d325adce8ad">
 
 <h2>Setup for Python:</h2>
