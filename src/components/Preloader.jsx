@@ -33,7 +33,7 @@ const Preloader = () => {
     <Provider >
       {isVisible ? (
         <>
-          <TitleName title={"🍃🍁 Redirecting"} />
+          <TitleName title={"🍁 Redirecting 🍃"} />
           <div className='relative mx-auto top-[170px] w-[200px] h-[200px] bg-transparent border-none border-black-100'>
             <div className='relative w-[70%] h-[70%] m-[15%] -rotate-45'>
               <div className='box one'></div>
@@ -50,7 +50,7 @@ const Preloader = () => {
         </>
       ) : (
         <>
-          <TitleName title={"🍃🍁 BotanicSafeguard"} />
+          <TitleName title={"🍁 BotanicSafeguard 🍃"} />
           <Navbar />
           <img src={Leaf5} className='absolute -z-10 top-0 object-cover h-auto w-full blur-[1.5px]' />
           <Classifier />
