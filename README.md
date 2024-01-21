@@ -18,10 +18,3 @@ pip install -r requirements.txt
 
 1. Install Nodejs
 2. Install required dependencies.
-3. Move to directory where project files are stored.
-E.g :- If your files are stored inside Project folder
-
-```
-// C:\Users\Example\Desktop>cd Project
-npm install --legacy-peer-deps
-```
