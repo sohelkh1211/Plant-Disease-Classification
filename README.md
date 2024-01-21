@@ -1,7 +1,7 @@
 # Plant-Disease-Classification
 This is my personal project that I have built using CNN and also built web app for the same. This is basically a web app with the help of which farmers or researchers can be able to detect which kind of disease the plant has by simply uploading image of leaf of that plant. This app can only detect diseases of Apple, Cherry, Corn, Grape, Potato, Tomato and Pepper plants. I have built python server ( where I've loaded my h5 model ) using FastAPI module of python. I've used uvicorn which is an ASGI web server implementation for Python to run python server.
 
-`After Loading the page should look like this.`
+`After Loading, the page should look like this.`
 
 <img width="960" alt="image" src="https://github.com/sohelkh1211/Plant-Disease-Classification/assets/125993375/aa92397f-c6f8-4055-8e13-9d325adce8ad">
 
