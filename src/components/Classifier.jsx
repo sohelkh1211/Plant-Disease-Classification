@@ -151,7 +151,7 @@ const Classifier = () => {
           </>
         </div>}
         {/* This JSX means that, it will display the container containing ClearIcon symbol to clear the data when data & isloading are false. It will clear the data & display the Image Uploader container. */}
-        {data || isloading && <div className='absolute flex w-[35px] h-[35px] top-[420px] lg:ml-[610px] xs:ml-[190px] rounded-full justify-center items-center bg-white border border-black cursor-pointer' onClick={clearData}> {/* clearData is callback function which gets called when user click on the button. This will set the value of all variables to false or undefined. */}
+        {data || isloading && <div className='absolute flex w-[35px] h-[35px] top-[420px] lg:ml-[610px] xs:ml-[160px] rounded-full justify-center items-center bg-white border border-black cursor-pointer' onClick={clearData}> {/* clearData is callback function which gets called when user click on the button. This will set the value of all variables to false or undefined. */}
           <ClearIcon />
         </div>
         }
