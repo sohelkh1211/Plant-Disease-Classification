@@ -2,13 +2,12 @@ import React, { useEffect } from 'react'
 import { useContext } from 'react';
 import Provider, { LoaderContext } from './Provider';
 import Navbar from './Navbar';
-import Leaf5 from '../assets/Leaf5-transformed.webp'
 import Classifier from './Classifier';
 import { TitleName } from '.';
 
 const Preloader = () => {
   const { isVisible, setIsVisible, dots, setDots } = useContext(LoaderContext);
-  console.log(isVisible);
+  // console.log(isVisible);
 
   useEffect(() => {
     const timeoutID = setTimeout(() => {
@@ -52,7 +51,6 @@ const Preloader = () => {
         <>
           <TitleName title={"🍁 BotanicSafeguard 🍃"} />
           <Navbar />
-          <img src={Leaf5} className='absolute -z-10 top-0 object-cover h-auto w-full blur-[1.5px]' />
           <Classifier />
         </>
       )}
