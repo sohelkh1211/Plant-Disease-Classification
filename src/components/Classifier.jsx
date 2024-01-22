@@ -119,7 +119,7 @@ const Classifier = () => {
 
   return (
     <>
-    <img src={Leaf5} className={`absolute -z-10 top-0 object-cover lg:h-auto ${image ? 'xs:h-[100%]' : 'xs:h-[150%]'}  w-full blur-[1.5px]`} />
+    <img src={Leaf5} className={`absolute -z-10 top-0 object-cover lg:h-auto ${image ? 'xs:h-[100%]' : 'xs:h-[250%]'} w-full blur-[1.5px]`} />
     {/* This JSX means that if 'image' is false [absence of image], it will display the container that will accept a file in the form of an image as an input. */}
       {!image && <div className='relative flex top-[120px] mx-auto lg:w-[400px] xs:w-[300px] h-60 rounded-xl shadow-xl bg-transparent border-[1.5px] border-black'>
         <DropzoneAreaBase
