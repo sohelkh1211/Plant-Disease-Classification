@@ -41,7 +41,7 @@ async def predict(
     prediction = model.predict(image_batch)
     predicted_class = class_names[np.argmax(prediction[0])]
     confidence = round(np.max(prediction[0])*100,2)
-    print(predicted_class,confidence)
+    # print(predicted_class,confidence)
     return {
         "class": predicted_class,
         "confidence": float(confidence)

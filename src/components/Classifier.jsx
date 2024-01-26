@@ -6,8 +6,6 @@ import CircularProgress from '@mui/joy/CircularProgress';
 import axios from 'axios';
 import ClearIcon from '@mui/icons-material/Clear';
 
-// const axios = require("axios").default;
-
 const useStyles = makeStyles((theme) => ({
   container: {
     width: "350px",
@@ -19,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "black",
     boxShadow: "0 0 5px #000",
 
-    [theme.breakpoints.down('xs')]:{
+    [theme.breakpoints.down('xs')]: {
       width: "250px",
       paddingLeft: theme.spacing(1.72),
       paddingRight: theme.spacing(1.72),
@@ -29,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontWeight: "bold",
     fontSize: "22.4px",
-    [theme.breakpoints.down('xs')]:{
+    [theme.breakpoints.down('xs')]: {
       fontSize: "19.5px"
     }
   },
@@ -79,13 +77,12 @@ const Classifier = () => {
       // Use Axios to make an asynchronous POST request to the server.
       let res = await axios({
         method: "post",
-        url: "http://localhost:8000/predict", // Server endpoint for handling file prediction.
+        url: "https://fastapi-production-accc.up.railway.app/predict", // Server endpoint for handling file prediction.
         data: formData, // Include the FormData object containing the file.
       });
-
       // Check if the response status is 200 (OK). If it is then set the Data to data received from the server.
-      if (res.status === 200) { 
-        setData(res.data);
+      if (res.status === 200) {
+        setData(Object.values(res.data));
       }
       // Set 'isloading' state to false, indicating the file processing is complete.
       setIsloading(false);
@@ -119,8 +116,8 @@ const Classifier = () => {
 
   return (
     <>
-    <img src={Leaf5} className={`absolute -z-10 top-0 object-cover lg:h-auto ${image ? 'xs:h-[100%]' : 'xs:h-[250%]'} w-full blur-[1.5px]`} />
-    {/* This JSX means that if 'image' is false [absence of image], it will display the container that will accept a file in the form of an image as an input. */}
+      <img src={Leaf5} className={`absolute -z-10 top-0 object-cover lg:h-auto ${image ? 'xs:h-[100%]' : 'xs:h-[250%]'} w-full blur-[1.5px]`} />
+      {/* This JSX means that if 'image' is false [absence of image], it will display the container that will accept a file in the form of an image as an input. */}
       {!image && <div className='relative flex top-[120px] mx-auto lg:w-[400px] xs:w-[300px] h-60 rounded-xl shadow-xl bg-transparent border-[1.5px] border-black'>
         <DropzoneAreaBase
           acceptedFiles={[".jpg", ".jpeg", ".png", ".webp", ".avif", ".apng"]}
@@ -138,8 +135,8 @@ const Classifier = () => {
         </div>}
         {/* This JSX means that, if data is true [server responds with JSON data] it will display conatiner which will show the Predicted Disease of that plant leaf & confidence.*/}
         {data && <div className='relative flex flex-col pt-2 pl-2 top-[43px] mx-auto lg:w-[400px] xs:w-[300px] h-20 rounded-b-xl bg-white border-[1.5px] border-black'>
-          <p className='font-bold lora'>Predicted Disease : {data.class}</p>
-          <p className='font-bold lora pt-2'>Confidence : {data.confidence}%</p>
+          <p className='font-bold lora'>Predicted Disease : {data[0]}</p>
+          <p className='font-bold lora pt-2'>Confidence : {data[1]}%</p>
         </div>}
         {/* This JSX means that, It will display container when isloading is true. This will show CircularProgess indicating client is fetching data from server. When data is recieved from server "isloading" will be set to false. */}
         {isloading && <div className='relative flex flex-col top-[43px] mx-auto lg:w-[400px] xs:w-[300px] h-20 rounded-b-xl bg-white border-[1.5px] border-black'>
@@ -151,7 +148,7 @@ const Classifier = () => {
           </>
         </div>}
         {/* This JSX means that, it will display the container containing ClearIcon symbol to clear the data when data & isloading are false. It will clear the data & display the Image Uploader container. */}
-        {data || isloading && <div className='absolute flex w-[35px] h-[35px] top-[420px] lg:ml-[610px] xs:ml-[160px] rounded-full justify-center items-center bg-white border border-black cursor-pointer' onClick={clearData}> {/* clearData is callback function which gets called when user click on the button. This will set the value of all variables to false or undefined. */}
+        {image && <div className='absolute flex w-[35px] h-[35px] top-[420px] lg:ml-[610px] xs:ml-[160px] rounded-full justify-center items-center bg-white border border-black cursor-pointer' onClick={clearData}> {/* clearData is callback function which gets called when user click on the button. This will set the value of all variables to false or undefined. */}
           <ClearIcon />
         </div>
         }
