@@ -27,7 +27,7 @@ C:\Users\Example\Desktop>cd Project
 ```
 npm create vite@latest ./ -- --template react
 npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init
+npx tailwindcss init -p
 ```
 4. Copy the content from my package.json file and paste in your package.json. After that run the following command.
 ```
