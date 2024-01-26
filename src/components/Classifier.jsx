@@ -77,7 +77,7 @@ const Classifier = () => {
       // Use Axios to make an asynchronous POST request to the server.
       let res = await axios({
         method: "post",
-        url: "https://fastapi-production-accc.up.railway.app/predict", // Server endpoint for handling file prediction.
+        url: "https://project-server-ejf8.onrender.com/predict", // Server endpoint for handling file prediction.
         data: formData, // Include the FormData object containing the file.
       });
       // Check if the response status is 200 (OK). If it is then set the Data to data received from the server.
